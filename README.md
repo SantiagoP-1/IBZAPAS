@@ -34,8 +34,9 @@ Pendiente (ver sección 13 de la especificación):
 - Panel administrativo (alta/edición de productos, subida de fotos con
   compresión, banners, destacados).
 - Reporte de clics de WhatsApp para la dueña.
-- Ping periódico para que el proyecto no se pause por inactividad (plan
-  gratuito de Supabase, 7 días) — todavía no configurado.
+- Ping anti-pausa: el workflow ya está escrito
+  (`.github/workflows/supabase-ping.yml`), pero necesita que el repo esté en
+  GitHub y tenga los secrets cargados — ver sección de abajo.
 - Confirmar con la clienta las preguntas abiertas de la sección 12 de la
   especificación (alcance del precio con tarjeta, quién carga ajustes futuros
   del catálogo, acuerdo comercial). El horario y el WhatsApp ya se

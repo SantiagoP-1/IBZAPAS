@@ -1,0 +1,24 @@
+name: Ping Supabase (evitar pausa por inactividad)
+
+# El plan gratuito de Supabase pausa el proyecto tras 7 días sin actividad.
+# Este workflow pega un select liviano contra la API REST todos los días
+# para que eso nunca pase. Requiere dos secrets en el repo (Settings →
+# Secrets and variables → Actions): SUPABASE_URL y SUPABASE_ANON_KEY
+# (los mismos valores de .env.local — la anon key es pública, no es secreta
+# en el sentido estricto, pero así queda centralizada en un solo lugar).
+
+on:
+  schedule:
+    - cron: "0 9 * * *"
+  workflow_dispatch:
+
+jobs:
+  ping:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Ping Supabase REST API
+        run: |
+          curl -sf -o /dev/null -w "Supabase respondió: %{http_code}\n" \
+            "${{ secrets.SUPABASE_URL }}/rest/v1/products?select=id&limit=1" \
+            -H "apikey: ${{ secrets.SUPABASE_ANON_KEY }}" \
+            -H "Authorization: Bearer ${{ secrets.SUPABASE_ANON_KEY }}"
