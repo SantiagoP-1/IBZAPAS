@@ -32,6 +32,16 @@ export default async function CatalogoPage({ searchParams }: { searchParams: Sea
 
   return (
     <div>
+      <div className="mx-auto max-w-6xl px-4 pt-8 sm:px-6">
+        <h1 className="text-xl font-bold text-zinc-900 dark:text-zinc-50 sm:text-2xl">
+          No solo vendemos calzado; seleccionamos rendimiento y estilo para tu día a día.
+        </h1>
+        <p className="mt-1 max-w-2xl text-sm text-zinc-600 dark:text-zinc-400">
+          Nos enfocamos en ofrecerte zapatillas deportivas y urbanas que resisten tu ritmo,
+          combinando la mejor tecnología de materiales con diseños actuales.
+        </p>
+      </div>
+
       <BannerStrip banners={banners} />
 
       <div className="mx-auto flex max-w-6xl flex-col gap-6 px-4 py-6 sm:px-6 lg:flex-row">

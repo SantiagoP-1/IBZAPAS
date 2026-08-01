@@ -9,8 +9,9 @@ export function SiteFooter() {
         </div>
         <div>
           <h4 className="mb-2 font-semibold text-zinc-900 dark:text-zinc-50">Horario</h4>
-          <p>10:30 a 12:30 hs</p>
-          <p>16:30 a 20:30 hs</p>
+          <p>Lunes a sábados</p>
+          <p>10 a 12:30 hs y 16:30 a 20:30 hs</p>
+          <p>Feriados: 16:30 a 20:30 hs</p>
         </div>
         <div>
           <h4 className="mb-2 font-semibold text-zinc-900 dark:text-zinc-50">Medios de pago</h4>
