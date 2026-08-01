@@ -56,7 +56,7 @@ export function CatalogFilters({
                     marca: toggleValue(marcasSeleccionadas, marca).join(",") || null,
                   })
                 }
-                className="h-4 w-4 rounded border-zinc-300"
+                className="h-4 w-4 rounded border-zinc-300 accent-brand-blue"
               />
               {marca}
             </label>
@@ -80,8 +80,8 @@ export function CatalogFilters({
                 }
                 className={`rounded-full border px-3 py-1 text-xs font-medium transition-colors ${
                   activo
-                    ? "border-zinc-900 bg-zinc-900 text-white dark:border-zinc-50 dark:bg-zinc-50 dark:text-zinc-900"
-                    : "border-zinc-300 text-zinc-700 hover:border-zinc-400 dark:border-zinc-700 dark:text-zinc-300"
+                    ? "border-brand-navy bg-brand-navy text-white dark:border-brand-blue dark:bg-brand-blue"
+                    : "border-zinc-300 text-zinc-700 hover:border-brand-blue dark:border-zinc-700 dark:text-zinc-300"
                 }`}
               >
                 {talle}
@@ -101,7 +101,7 @@ export function CatalogFilters({
             value={precioMin}
             onChange={(e) => setPrecioMin(e.target.value)}
             onBlur={() => updateParams({ precioMin: precioMin || null })}
-            className="w-full rounded-lg border border-zinc-300 px-2 py-1.5 text-sm dark:border-zinc-700 dark:bg-zinc-900"
+            className="w-full rounded-lg border border-zinc-300 px-2 py-1.5 text-sm focus:border-brand-blue focus:outline-none dark:border-zinc-700 dark:bg-zinc-900"
           />
           <span className="text-zinc-400">–</span>
           <input
@@ -111,7 +111,7 @@ export function CatalogFilters({
             value={precioMax}
             onChange={(e) => setPrecioMax(e.target.value)}
             onBlur={() => updateParams({ precioMax: precioMax || null })}
-            className="w-full rounded-lg border border-zinc-300 px-2 py-1.5 text-sm dark:border-zinc-700 dark:bg-zinc-900"
+            className="w-full rounded-lg border border-zinc-300 px-2 py-1.5 text-sm focus:border-brand-blue focus:outline-none dark:border-zinc-700 dark:bg-zinc-900"
           />
         </div>
       </div>
@@ -124,7 +124,7 @@ export function CatalogFilters({
             setPrecioMax("");
             router.push(pathname, { scroll: false });
           }}
-          className="text-left text-xs font-medium text-zinc-500 underline underline-offset-2 hover:text-zinc-900 dark:hover:text-zinc-50"
+          className="text-left text-xs font-medium text-zinc-500 underline underline-offset-2 hover:text-brand-blue dark:hover:text-brand-blue-light"
         >
           Limpiar filtros
         </button>

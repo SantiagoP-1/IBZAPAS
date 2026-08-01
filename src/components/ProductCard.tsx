@@ -10,7 +10,7 @@ export function ProductCard({ product }: { product: Product }) {
   return (
     <Link
       href={`/producto/${product.slug}`}
-      className="group flex flex-col overflow-hidden rounded-2xl border border-black/5 bg-white transition-shadow hover:shadow-lg dark:border-white/10 dark:bg-zinc-900"
+      className="group flex flex-col overflow-hidden rounded-2xl border border-black/5 bg-white transition-all hover:border-brand-blue/40 hover:shadow-lg hover:shadow-brand-blue/10 dark:border-white/10 dark:bg-zinc-900"
     >
       <div className="relative aspect-square w-full overflow-hidden bg-zinc-100 dark:bg-zinc-800">
         {portada ? (
@@ -40,7 +40,7 @@ export function ProductCard({ product }: { product: Product }) {
       </div>
 
       <div className="flex flex-1 flex-col gap-1 p-3">
-        <p className="text-xs font-medium uppercase tracking-wide text-zinc-500 dark:text-zinc-400">
+        <p className="text-xs font-medium uppercase tracking-wide text-brand-blue dark:text-brand-blue-light">
           {product.marca}
         </p>
         <h3 className="text-sm font-semibold text-zinc-900 dark:text-zinc-50">{product.nombre}</h3>

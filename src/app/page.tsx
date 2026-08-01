@@ -32,15 +32,25 @@ export default async function CatalogoPage({ searchParams }: { searchParams: Sea
 
   return (
     <div>
-      <div className="mx-auto max-w-6xl px-4 pt-8 sm:px-6">
-        <h1 className="text-xl font-bold text-zinc-900 dark:text-zinc-50 sm:text-2xl">
-          No solo vendemos calzado; seleccionamos rendimiento y estilo para tu día a día.
-        </h1>
-        <p className="mt-1 max-w-2xl text-sm text-zinc-600 dark:text-zinc-400">
-          Nos enfocamos en ofrecerte zapatillas deportivas y urbanas que resisten tu ritmo,
-          combinando la mejor tecnología de materiales con diseños actuales.
-        </p>
-      </div>
+      <section className="relative overflow-hidden bg-brand-navy">
+        <div
+          aria-hidden
+          className="pointer-events-none absolute -top-24 -right-24 h-72 w-72 rounded-full bg-brand-blue opacity-40 blur-3xl"
+        />
+        <div
+          aria-hidden
+          className="pointer-events-none absolute -bottom-32 -left-16 h-64 w-64 rounded-full bg-brand-blue-light opacity-20 blur-3xl"
+        />
+        <div className="relative mx-auto max-w-6xl px-4 py-10 sm:px-6 sm:py-14">
+          <h1 className="max-w-2xl text-2xl font-bold text-white sm:text-3xl">
+            No solo vendemos calzado; seleccionamos rendimiento y estilo para tu día a día.
+          </h1>
+          <p className="mt-2 max-w-2xl text-sm text-brand-blue-light sm:text-base">
+            Nos enfocamos en ofrecerte zapatillas deportivas y urbanas que resisten tu ritmo,
+            combinando la mejor tecnología de materiales con diseños actuales.
+          </p>
+        </div>
+      </section>
 
       <BannerStrip banners={banners} />
 

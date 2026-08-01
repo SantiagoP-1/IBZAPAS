@@ -24,12 +24,12 @@ export function SearchBox() {
         value={q}
         onChange={(e) => setQ(e.target.value)}
         onKeyDown={(e) => e.key === "Enter" && submit()}
-        className="w-full rounded-full border border-zinc-300 px-4 py-2.5 text-sm dark:border-zinc-700 dark:bg-zinc-900"
+        className="w-full rounded-full border border-zinc-300 px-4 py-2.5 text-sm focus:border-brand-blue focus:outline-none dark:border-zinc-700 dark:bg-zinc-900"
       />
       <button
         type="button"
         onClick={submit}
-        className="shrink-0 rounded-full bg-zinc-900 px-4 py-2.5 text-sm font-medium text-white dark:bg-zinc-50 dark:text-zinc-900"
+        className="shrink-0 rounded-full bg-brand-navy px-4 py-2.5 text-sm font-medium text-white transition-colors hover:bg-brand-blue"
       >
         Buscar
       </button>

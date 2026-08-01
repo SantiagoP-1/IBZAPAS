@@ -16,7 +16,7 @@ export function ProductInfo({ product }: { product: Product }) {
   return (
     <div className="flex flex-col gap-4">
       <div>
-        <p className="text-sm font-medium uppercase tracking-wide text-zinc-500 dark:text-zinc-400">
+        <p className="text-sm font-medium uppercase tracking-wide text-brand-blue dark:text-brand-blue-light">
           {product.marca}
         </p>
         <h1 className="text-2xl font-bold text-zinc-900 dark:text-zinc-50">{product.nombre}</h1>
@@ -61,8 +61,8 @@ export function ProductInfo({ product }: { product: Product }) {
                     !variant.disponible
                       ? "cursor-not-allowed border-zinc-200 text-zinc-300 line-through dark:border-zinc-800 dark:text-zinc-700"
                       : seleccionado
-                        ? "border-zinc-900 bg-zinc-900 text-white dark:border-zinc-50 dark:bg-zinc-50 dark:text-zinc-900"
-                        : "border-zinc-300 text-zinc-700 hover:border-zinc-400 dark:border-zinc-700 dark:text-zinc-300"
+                        ? "border-brand-navy bg-brand-navy text-white dark:border-brand-blue dark:bg-brand-blue"
+                        : "border-zinc-300 text-zinc-700 hover:border-brand-blue dark:border-zinc-700 dark:text-zinc-300"
                   }`}
                 >
                   {variant.talle}
