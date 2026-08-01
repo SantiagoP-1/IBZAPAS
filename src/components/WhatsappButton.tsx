@@ -15,21 +15,27 @@ export function WhatsappButton({
 }) {
   function handleClick() {
     // Se registra el clic sin bloquear la navegación a WhatsApp.
-    // keepalive asegura que el request se complete aunque la pestaña
-    // empiece a descargar la página de WhatsApp.
-    fetch("/api/whatsapp-click", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      keepalive: true,
-      body: JSON.stringify({
-        productId: product.id,
-        marca: product.marca,
-        nombre: product.nombre,
-        talle: talle ?? null,
-      }),
-    }).catch(() => {
-      // el tracking no debe impedir que la consulta llegue a WhatsApp
+    // sendBeacon está pensado exactamente para esto (mandar un request que
+    // sobreviva a la navegación); fetch con keepalive:true llegaba con el
+    // body vacío en algunos casos.
+    const payload = JSON.stringify({
+      productId: product.id,
+      marca: product.marca,
+      nombre: product.nombre,
+      talle: talle ?? null,
     });
+
+    if (navigator.sendBeacon) {
+      navigator.sendBeacon("/api/whatsapp-click", new Blob([payload], { type: "application/json" }));
+    } else {
+      fetch("/api/whatsapp-click", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: payload,
+      }).catch(() => {
+        // el tracking no debe impedir que la consulta llegue a WhatsApp
+      });
+    }
   }
 
   return (
